@@ -6,7 +6,7 @@ from yaqd_core import BaseDaemon
 
 
 class Pin(BaseDaemon):
-    _kind = "rpi_gpio_pin"
+    _kind = "rpi-gpio-pin"
     defaults = {}
 
     def __init__(self, name, config, config_filepath):
@@ -30,10 +30,11 @@ class Pin(BaseDaemon):
         """
         # TODO:
         super()._load_state(state)
+        self.set_value(state.get("value", default=0))
 
     def get_state(self):
         state = super().get_state()
-        state["turret"] = self._turret
+        state["value"] = get_value()
         return state
 
     def get_value(self):
@@ -50,5 +51,6 @@ class Pin(BaseDaemon):
             self.value = self.controller.value
             self._busy = False
             if mode != "in":
-                break
-            await asyncio.sleep(0.01)
+                await self._busy_sig()
+            else:
+                await asyncio.sleep(0.01)
