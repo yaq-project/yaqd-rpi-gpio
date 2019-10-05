@@ -2,7 +2,7 @@ import asyncio
 
 import gpiozero
 
-from yaqd_core import BaseDaemon
+from yaqd_core import BaseDaemon, set_action
 
 
 class PinDaemon(BaseDaemon):
