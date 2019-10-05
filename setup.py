@@ -13,14 +13,14 @@ def read(fname):
 with open(os.path.join(here, "yaqd_rpi_gpio", "VERSION")) as version_file:
     version = version_file.read().strip()
 
-extra_files = {"yaqd_thorlabs": ["VERSION"]}
+extra_files = {"yaqd_rpi_gpio": ["VERSION"]}
 
 setup(
     name="yaqd_rpi_gpio",
     packages=find_packages(),
     package_data=extra_files,
     python_requires=">=3.7",
-    install_requires=["yaqd-core"],
+    install_requires=["yaqd-core", "gpiozero"],
     extras_require={
         "dev": ["black", "pre-commit"],
     },
