@@ -10,6 +10,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 def read(fname):
     return open(os.path.join(here, fname)).read()
 
+
 with open(os.path.join(here, "yaqd_rpi_gpio", "VERSION")) as version_file:
     version = version_file.read().strip()
 
@@ -21,14 +22,13 @@ setup(
     package_data=extra_files,
     python_requires=">=3.7",
     install_requires=["yaqd-core", "gpiozero"],
-    extras_require={
-        "dev": ["black", "pre-commit"],
-    },
+    extras_require={"dev": ["black", "pre-commit"]},
     version=version,
     description="yaq daemon for control of Rasperry Pi GPIO",
     author="yaq Developers",
     license="LGPL v3",
     url="https://gitlab.com/yaq/yaqd-rpi-gpio",
+    entry_points={"console_scripts": ["yaqd-rpi-gpio-pin=yaqd_rpi_gpio._pin:PinDaemon.main"]},
     keywords="yaq hardware",
     classifiers=[
         "Development Status :: 1 - Planning",

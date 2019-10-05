@@ -5,7 +5,7 @@ import gpiozero
 from yaqd_core import BaseDaemon
 
 
-class Pin(BaseDaemon):
+class PinDaemon(BaseDaemon):
     _kind = "rpi-gpio-pin"
     defaults = {}
 
