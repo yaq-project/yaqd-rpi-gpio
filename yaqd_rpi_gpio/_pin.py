@@ -13,10 +13,12 @@ class PinDaemon(Daemon):
         super().__init__(name, config, config_filepath)
         self.index = config["index"]
         self.mode = config["mode"]
-        self.pull_up = config["pull up"]
-        self.controller = gpiozero.DigitalInputDevice(
-            pin=self.index, pull_up=self.pull_up, active_state=True
-        )
+        self.pull_up = config["pull_up"]
+        if self.mode == "in":
+            self.controller = gpiozero.DigitalInputDevice(pin=self.index, pull_up=self.pull_up)
+        elif self.mode == "out":
+            self.controller = gpiozero.DigitalOutputDevice(pin=self.index)
+        self.set_value(self.value)
 
     def _load_state(self, state):
         """Load an initial state from a dictionary (typically read from the state.toml file).
@@ -30,11 +32,11 @@ class PinDaemon(Daemon):
         """
         # TODO:
         super()._load_state(state)
-        self.set_value(state.get("value", default=0))
+        self.value = state.get("value", 0)
 
     def get_state(self):
         state = super().get_state()
-        state["value"] = get_value()
+        state["value"] = self.get_value()
         return state
 
     def get_value(self):
@@ -50,7 +52,7 @@ class PinDaemon(Daemon):
         while True:
             self.value = self.controller.value
             self._busy = False
-            if mode != "in":
-                await self._busy_sig()
+            if self.mode != "in":
+                await self._busy_sig.wait()
             else:
                 await asyncio.sleep(0.01)
