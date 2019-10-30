@@ -2,10 +2,10 @@ import asyncio
 
 import gpiozero
 
-from yaqd_core import Daemon, set_action
+from yaqd_core import Base, set_action
 
 
-class PinDaemon(Daemon):
+class PinDaemon(Base):
     _kind = "rpi-gpio-pin"
     defaults = {}
 
