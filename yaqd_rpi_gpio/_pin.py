@@ -20,6 +20,10 @@ class PinDaemon(Base):
             self.controller = gpiozero.DigitalOutputDevice(pin=self.index)
         self.set_value(self.value)
 
+    def _connection_lost(self):
+        super()._connection_lost()
+        self.controller.value = 0
+
     def _load_state(self, state):
         """Load an initial state from a dictionary (typically read from the state.toml file).
 
