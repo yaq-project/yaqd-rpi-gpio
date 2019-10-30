@@ -34,6 +34,9 @@ class PinDaemon(Base):
         super()._load_state(state)
         self.value = state.get("value", 0)
 
+    def blink(self, up, down):
+        self.controller.blink(up, down)
+
     def get_state(self):
         state = super().get_state()
         state["value"] = self.get_value()
