@@ -1,13 +1,14 @@
 import asyncio
+from typing import Dict, Any
 
-import gpiozero
+import gpiozero  # type: ignore
 
 from yaqd_core import Base, set_action
 
 
 class PinDaemon(Base):
     _kind = "rpi-gpio-pin"
-    defaults = {}
+    defaults: Dict[str, Any] = {}
 
     def __init__(self, name, config, config_filepath):
         super().__init__(name, config, config_filepath)
