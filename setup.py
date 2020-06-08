@@ -15,7 +15,7 @@ with open("README.md") as readme_file:
     readme = readme_file.read()
 
 
-requirements = ["yaqd-core>=2020.05.1", "gpiozero"]
+requirements = ["yaqd-core>=2020.06.0", "gpiozero"]
 
 extra_requirements = {"dev": ["black", "pre-commit"]}
 extra_files = {"yaqd_rpi_gpio": ["VERSION"]}
