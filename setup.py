@@ -1,42 +1,56 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 
-import os
+"""The setup script."""
+
+import pathlib
 from setuptools import setup, find_packages
 
+here = pathlib.Path(__file__).parent
 
-here = os.path.abspath(os.path.dirname(__file__))
-
-
-def read(fname):
-    return open(os.path.join(here, fname)).read()
-
-
-with open(os.path.join(here, "yaqd_rpi_gpio", "VERSION")) as version_file:
+with open(here / "yaqd_rpi_gpio" / "VERSION") as version_file:
     version = version_file.read().strip()
 
+
+with open("README.md") as readme_file:
+    readme = readme_file.read()
+
+
+requirements = ["yaqd-core>=2020.05.1", "gpiozero"]
+
+extra_requirements = {"dev": ["black", "pre-commit"]}
 extra_files = {"yaqd_rpi_gpio": ["VERSION"]}
 
 setup(
-    name="yaqd_rpi_gpio",
-    packages=find_packages(),
-    package_data=extra_files,
-    python_requires=">=3.7",
-    install_requires=["yaqd-core", "gpiozero"],
-    extras_require={"dev": ["black", "pre-commit"]},
-    version=version,
-    description="yaq daemon for control of Rasperry Pi GPIO",
     author="yaq Developers",
-    license="LGPL v3",
-    url="https://gitlab.com/yaq/yaqd-rpi-gpio",
-    entry_points={"console_scripts": ["yaqd-rpi-gpio-pin=yaqd_rpi_gpio._pin:PinDaemon.main"]},
-    keywords="yaq hardware",
+    author_email="blaise@untzag.com",
+    python_requires=">=3.7",
     classifiers=[
-        "Development Status :: 1 - Planning",
+        "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Science/Research",
         "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
         "Natural Language :: English",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
         "Topic :: Scientific/Engineering",
     ],
+    description="yaq interface to Raspberry Pi GPIO pins",
+    entry_points={
+        "console_scripts": [
+            "yaqd-gpio-digital-output=yaqd_rpi_gpio._gpio_digital_output:GpioDigitalOutput.main",
+        ],
+    },
+    install_requires=requirements,
+    extras_require=extra_requirements,
+    license="GNU Lesser General Public License v3 (LGPL)",
+    long_description=readme,
+    long_description_content_type="text/markdown",
+    include_package_data=True,
+    package_data=extra_files,
+    keywords="yaqd-rpi-gpio",
+    name="yaqd-rpi-gpio",
+    packages=find_packages(include=["yaqd_rpi_gpio", "yaqd_rpi_gpio.*"]),
+    url="https://gitlab.com/yaq/yaqd-rpi-gpio",
+    version=version,
+    zip_safe=False,
 )
