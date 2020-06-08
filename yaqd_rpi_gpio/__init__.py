@@ -1,2 +1,2 @@
 from .__version__ import *
-from ._pin import *
+from ._gpio_digital_output import *
