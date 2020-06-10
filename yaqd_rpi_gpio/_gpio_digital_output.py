@@ -20,7 +20,7 @@ class GpioDigitalOutput(DiscreteHardware):
         super().__init__(name, config, config_filepath)
         self.index = config["index"]
         self.controller = gpiozero.DigitalOutputDevice(pin=self.index)
-        self.set_value(self.value)
+        self._position_identifiers = {"low": 0, "high": 1}
 
     def _connection_lost(self, peername):
         super()._connection_lost(peername)
@@ -29,7 +29,7 @@ class GpioDigitalOutput(DiscreteHardware):
 
     def get_state(self):
         state = super().get_state()
-        state["value"] = self.value
+        state["value"] = self.get_value()
         return state
 
     def get_value(self):
