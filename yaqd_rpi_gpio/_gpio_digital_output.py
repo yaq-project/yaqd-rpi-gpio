@@ -29,18 +29,18 @@ class GpioDigitalOutput(DiscreteHardware):
 
     def get_state(self):
         state = super().get_state()
-        state["value"] = self.get_value()
+        state["value"] = self.get_position()
         return state
 
-    def get_value(self):
+    def get_position(self):
         return self.controller.value
 
-    def set_value(self, value):
+    def set_position(self, value):
         self.controller.value = value
 
     async def update_state(self):
         """Continually monitor and update the current daemon state."""
         while True:
-            self.value = self.get_value()
+            self.value = self.get_position()
             self._busy = False
             await self._busy_sig.wait()
