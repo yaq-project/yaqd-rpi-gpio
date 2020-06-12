@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [2020.06.1]
+
 ### Changed
 - "value" is no longer written to state for gpio-digital-output
 - gpio-digital-output now at version 0.2.0
