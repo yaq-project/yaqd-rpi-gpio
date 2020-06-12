@@ -14,7 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 ### Added
 - new daemon: gpio-digital-sensor
 
-### [2020.06.0]
+## [2020.06.0]
 
 ### Added
 - initial release
