@@ -11,4 +11,5 @@ yaq interface to Raspberry Pi GPIO pins
 
 This package contains the following daemon(s):
 
-- https://yaq.fyi/daemons/gpio-digital-output
+- [gpio-digital-output](https://yaq.fyi/daemons/gpio-digital-output)
+- [gpio-digital-sensor](https://yaq.fyi/daemons/gpio-digital-sensor)

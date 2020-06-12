@@ -38,6 +38,7 @@ setup(
     entry_points={
         "console_scripts": [
             "yaqd-gpio-digital-output=yaqd_rpi_gpio._gpio_digital_output:GpioDigitalOutput.main",
+            "yaqd-gpio-digital-sensor=yaqd_rpi_gpio._gpio_digital_sensor:GpioDigitalSensor.main",
         ],
     },
     install_requires=requirements,
