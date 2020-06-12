@@ -12,7 +12,7 @@ from .__version__ import __branch__
 
 class GpioDigitalOutput(DiscreteHardware):
     _kind = "gpio-digital-output"
-    _version = "0.1.0" + f"+{__branch__}" if __branch__ else ""
+    _version = "0.2.0" + f"+{__branch__}" if __branch__ else ""
     traits: List[str] = []
     defaults: Dict[str, Any] = {}
 
@@ -26,11 +26,6 @@ class GpioDigitalOutput(DiscreteHardware):
         super()._connection_lost(peername)
         if len(self._clients) == 0:
             self.controller.value = 0
-
-    def get_state(self):
-        state = super().get_state()
-        state["value"] = self.controller.value
-        return state
 
     def _set_position(self, value):
         self.controller.value = value
