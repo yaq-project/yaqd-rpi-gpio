@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [2020.08.0]
+
+### Changed
+- Now uses Avro-RPC [YEP-107](https://yeps.yaq.fyi/107/)
+- Uses Flit for distribution
+
 ## [2020.06.1]
 
 ### Changed
@@ -19,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 ### Added
 - initial release
 
-[Unreleased]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2020.06.1...master
+[Unreleased]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2020.08.0...master
+[2020.08.0]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2020.06.1...2020.08.0
 [2020.06.1]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2020.06.0...2020.06.1
 [2020.06.0]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/tags/v2020.06.0
