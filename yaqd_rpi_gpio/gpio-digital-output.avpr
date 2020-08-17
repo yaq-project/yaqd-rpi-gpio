@@ -40,6 +40,10 @@
         }
     },
     "doc": "Daemon to control one gpio pin as a digital output.\n",
+    "hardware": [
+        "raspberry-pi:4b",
+        "raspberry-pi:3b+"
+    ],
     "links": {
         "bugtracker": "https://gitlab.com/yaq/yaqd-rpi-gpio/-/issues/",
         "manufacturer": "https://www.raspberrypi.org/",
@@ -175,9 +179,9 @@
     },
     "trait": "has-position",
     "traits": [
+        "is-discrete",
         "is-daemon",
-        "has-position",
-        "is-discrete"
+        "has-position"
     ],
     "types": [
         {

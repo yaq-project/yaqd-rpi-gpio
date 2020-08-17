@@ -3,6 +3,7 @@ doc = """
 Daemon to read from gpio pins as digital sensors.
 """
 traits = ["has-measure-trigger", "is-sensor", "is-daemon"]
+hardware = ["raspberry-pi:4b", "raspberry-pi:3b+"]
 
 [links]
 source = "https://gitlab.com/yaq/yaqd-rpi-gpio/"
