@@ -49,6 +49,10 @@
         }
     },
     "doc": "Daemon to read from gpio pins as digital sensors.\n",
+    "hardware": [
+        "raspberry-pi:4b",
+        "raspberry-pi:3b+"
+    ],
     "links": {
         "bugtracker": "https://gitlab.com/yaq/yaqd-rpi-gpio/-/issues/",
         "manufacturer": "https://www.raspberrypi.org/",
