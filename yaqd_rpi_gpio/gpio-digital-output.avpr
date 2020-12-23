@@ -49,6 +49,9 @@
         "raspberry-pi:4b",
         "raspberry-pi:3b+"
     ],
+    "installation": {
+        "PyPI": "https://pypi.org/project/yaqd-rpi-gpio/"
+    },
     "links": {
         "bugtracker": "https://gitlab.com/yaq/yaqd-rpi-gpio/-/issues/",
         "manufacturer": "https://www.raspberrypi.org/",
