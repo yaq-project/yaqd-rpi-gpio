@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [2020.12.0]
+
 ### Changed
 - regenerated avpr based on recent traits update
 
@@ -28,7 +30,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 ### Added
 - initial release
 
-[Unreleased]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2020.08.0...master
+[Unreleased]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2020.12.0...master
+[2020.12.0]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2020.08.0...2020.12.0
 [2020.08.0]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2020.06.1...2020.08.0
 [2020.06.1]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2020.06.0...2020.06.1
 [2020.06.0]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/tags/v2020.06.0
