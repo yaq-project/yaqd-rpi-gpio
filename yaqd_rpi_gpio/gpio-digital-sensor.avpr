@@ -214,8 +214,8 @@
     "protocol": "gpio-digital-sensor",
     "requires": [],
     "traits": [
-        "is-daemon",
         "has-measure-trigger",
+        "is-daemon",
         "is-sensor"
     ],
     "types": [

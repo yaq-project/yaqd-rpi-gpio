@@ -282,9 +282,9 @@
         }
     },
     "traits": [
-        "is-discrete",
+        "has-position",
         "is-daemon",
-        "has-position"
+        "is-discrete"
     ],
     "types": [
         {
