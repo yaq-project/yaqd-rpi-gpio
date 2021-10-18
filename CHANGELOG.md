@@ -41,7 +41,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 ### Added
 - initial release
 
-[Unreleased]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2021.10.0...master
+[Unreleased]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2021.10.0...main
 [2021.10.0]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2021.3.0...2021.10.0
 [2021.3.0]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2020.12.0...2021.3.0
 [2020.12.0]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2020.08.0...2020.12.0
