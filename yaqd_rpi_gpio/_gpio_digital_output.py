@@ -28,10 +28,11 @@ class GpioDigitalOutput(DiscreteHardware):
 
     async def update_state(self):
         while True:
-            self._position = self._controller.value
-            if self._position:
+            self._state["position"] = self._controller.value
+            if self._state["position"]:
                 self._state["position_identifier"] = "high"
             else:
                 self._state["position_identifier"] = "low"
             self._busy = False
             await self._busy_sig.wait()
+
