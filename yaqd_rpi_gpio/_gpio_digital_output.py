@@ -35,3 +35,4 @@ class GpioDigitalOutput(DiscreteHardware):
                 self._state["position_identifier"] = "low"
             self._busy = False
             await self._busy_sig.wait()
+
