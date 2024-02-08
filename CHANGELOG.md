@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [2024.2.0]
+
+### Fixed
+- digital-output still using self.position, must use state dictionary for modern yaq
+
 ## [2021.10.0]
 
 ### Changed
@@ -41,7 +46,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 ### Added
 - initial release
 
-[Unreleased]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2021.10.0...main
+[Unreleased]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2024.2.0...main
+[2024.2.0]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2021.10.0...2024.2.0
 [2021.10.0]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2021.3.0...2021.10.0
 [2021.3.0]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2020.12.0...2021.3.0
 [2020.12.0]: https://gitlab.com/yaq/yaqd-rpi-gpio/-/compare/v2020.08.0...2020.12.0
