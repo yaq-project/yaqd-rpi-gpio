@@ -25,9 +25,9 @@ jobs:
         python -m pip install --upgrade .
     - name: Test with pytest
       run: |
+        yaqd-gpio-pwm-output --version
+        yaqd-gpio-pwm-output --help
         yaqd-gpio-digital-output --version
         yaqd-gpio-digital-output --help
         yaqd-gpio-digital-sensor --version
         yaqd-gpio-digital-sensor --help
-
-
