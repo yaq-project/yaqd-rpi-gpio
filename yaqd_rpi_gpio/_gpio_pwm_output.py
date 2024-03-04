@@ -16,7 +16,7 @@ class GpioPwmOutput(HasLimits, HasPosition, IsDaemon):
 
     def __init__(self, name, config, config_filepath):
         super().__init__(name, config, config_filepath)
-        self._controller = gpiozero.PwmOutputDevice(
+        self._controller = gpiozero.PWMOutputDevice(
             pin=config["index"], frequency=config["pwm_frequency"]
         )
         self._watchdog_fed_time = time.time()
