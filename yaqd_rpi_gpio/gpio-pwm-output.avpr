@@ -94,7 +94,7 @@
         },
         "watchdog_timeout": {
             "default": null,
-            "doc": "Watchdog timeout, in seconds. Watchdog is fed each time position is set. If watchdog times out, destination is set to watchdog_timeout_destination (default zero)",
+            "doc": "Watchdog timeout, in seconds. Watchdog is fed each time position is set. If watchdog times out, destination is set to watchdog_timeout_destination (default zero). If null, watchdog never runs.",
             "type": [
                 "null",
                 "int"
